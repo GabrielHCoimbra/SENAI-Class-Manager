@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="senai_software">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Gestão de Aula - Senai</title>
+</head>
+<body>
+    <div class="sort">
+        
+        <h1>Digite o numero de participantes:</h1>
+        <h2></h2>
+        <input type="number" id="number" name="number" required class="input2">
+        <button class="a_sort">Sortear numero</button>
+
+        
+    </div>
+    <script>
+        const h1 = document.querySelector('h1');
+        const h2 = document.querySelector('h2');
+        const button = document.querySelector('button');
+        button.onclick = function(){
+            var number1= document.querySelector('#number');
+            var number2 = number1.value;
+            h1.innerHTML = 'Numero sorteado:';
+            h2.innerHTML = Math.floor(Math.random() * number2);
+            number1.style.display = "none";
+        };
+    </script>
+</body>
+</html>

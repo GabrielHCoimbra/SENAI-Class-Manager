@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+html{
+    text-align: center;
+    vertical-align: middle;
+    height: 100vh;
+    
+}
+
+h3, h1, .title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #3c60a7;
+}
+
+table {
+    width: 40%;
+}
+
+.form_register{
+    margin-left: 40%;
+}
+
+a{
+    text-decoration: none;
+    color: #090909;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    margin-top: 10px;
+}
+
+
+
+/*Inputs----------------------------------------------------------*/
+
+.input-group {
+    position: relative;
+}
+   
+.input {
+    width: 100%;
+    margin: 10px 0px;
+    border: solid 1.5px #000000;
+    border-radius: 1rem;
+    background: none;
+    padding: 10px;
+    font-size: 1rem;
+    color: #000;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.input2{
+    border: solid 1.5px #000000;
+    border-radius: 1rem;
+    background: none;
+    padding: 10px;
+    font-size: 1rem;
+    color: #000;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+    width: 100px;
+    margin: 10px 0px;
+
+}
+
+
+/*Inputs button---------------------------------------*/
+
+.btn {
+    color: #090909;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+}
+   
+.btn:active {
+    color: #666;
+}
+
+/*Sorteador-----------------------------------------------------------------*/
+
+.sort{
+    height: 100vh;
+}
+
+.a_sort{
+    padding: 4px;
+    text-decoration: none;
+    color: #090909;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    margin-top: 10px;
+}
+
+h2{
+    margin: 10px;
+}
+
+
+/*Consulta-------------------------------------------------------------*/
+
+.tab{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #434343;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+}
+
+.query{
+   padding-left: 21%;
+}
+
+.title{
+    text-align: center;
+}
+
+.tabi{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #434343;
+    font-size: 25px;
+    text-align: center;
+}
+
+.tr{
+    margin: 100px;
+}

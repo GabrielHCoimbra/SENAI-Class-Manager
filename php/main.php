@@ -75,6 +75,7 @@
             <a href="student1.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Sortear Aluno</a>
             <a href="html/number_sort.html" target="resultado" class="hiperlinks">Sortear Numero</a>
             <a href="html/timer.html?class=<?=$class;?>" target="resultado" class="hiperlinks">Temporizador</a>
+            <a href="html/credit.html" class="hiperlinks">Créditos</a>
         </div>
         
     </header>

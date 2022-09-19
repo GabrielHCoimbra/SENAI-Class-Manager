@@ -23,17 +23,16 @@ ul li p{
 
 .all{
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 50% 50%;
     padding-top: 15%;
-    
-}
-.infos{
-    display: grid;
-    grid-template-columns: 60% 40%;
+    width: 550px;
 }
 
 .all{
-    margin-left: 25%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
 }
 
 figure{

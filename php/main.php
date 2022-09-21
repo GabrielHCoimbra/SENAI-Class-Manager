@@ -74,6 +74,7 @@
             <a href="html/register.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Aluno</a>
             <a href="student_query.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Consultar Aluno</a>
             <a href="student1.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Sortear Aluno</a>
+            <a href="student2.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Sortear Grupos</a>
             <a href="html/number_sort.html" target="resultado" class="hiperlinks">Sortear Numero</a>
             <a href="html/timer.html?class=<?=$class;?>" target="resultado" class="hiperlinks">Temporizador</a>
             <a href="html/credit.php?class=<?=$class;?>" class="hiperlinks">Créditos</a>

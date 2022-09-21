@@ -1,0 +1,22 @@
+if (($i2 / $gr) == $al) {
+        $gr2 = $gr;
+        $st_history[0] = "teste";
+        while ($gr2 >= 1 ) {
+            $gr3 = ($gr - $gr2) + 1;
+            ?><h1>Grupo <?php echo $gr3;?></h1><?php
+            $al2 = $al;
+            while ($al2 >= 1) {
+                $al3 = ($al - $al2) + 1;
+                $num = floor(((float)rand()/(float)getrandmax())*$i2);
+                15:20 20/09/2022
+                if (in_array("$student", $st_history)) {
+                    $st_history[$al3] = $students[$num];
+                    echo $students[$num];
+                    $al2--;
+                }   
+            }
+            $gr2--;
+        }
+    }else{
+        echo "oi";
+    }

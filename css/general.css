@@ -3,14 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    overflow-y: hidden;
+    
 }
 
 html{
     text-align: center;
     vertical-align: middle;
     height: 100vh;
-    
 }
 
 h3, h1, .title{
@@ -125,7 +124,11 @@ h2{
 
 .query{
    padding-left: 21%;
+   height: 80vh;
 }
+.query2{
+    height: 80vh;
+ }
 
 .title{
     text-align: center;

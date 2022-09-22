@@ -34,7 +34,7 @@ $i = 1;
 ?>
 <div class="query">
     <table class="table2">
-        <tr class="tr">
+        <tr class="tr1">
             <td class="title">ID</td>
             <td class="title">NOME</td>
         </tr>

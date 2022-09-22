@@ -124,11 +124,9 @@ h2{
 
 .query{
    padding-left: 21%;
-   height: 80vh;
+   
 }
-.query2{
-    height: 80vh;
- }
+
 
 .title{
     text-align: center;
@@ -139,6 +137,10 @@ h2{
     color: #434343;
     font-size: 25px;
     text-align: center;
+}
+
+.tr1{
+    margin: 100px;
 }
 
 .tr{

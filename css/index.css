@@ -44,7 +44,7 @@
 
 .main-index{
     overflow: hidden;
-    height: 100vh;
+    height: 95vh;
     width: 100vw;
     text-align: center;
     background-image: url("../img/techbackground.jpg");
@@ -81,4 +81,22 @@
 .li1:hover{
     background-color: rgb(216, 216, 216);
     border-radius: 10px 10px 0px 0px;
+}
+
+/*footer----------------------------------------------------------------------------------------------*/
+
+.footer{
+    height: 5vh;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 0.5%;
+}
+.footer_a{
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+b{
+    color: #3c60a7;
 }

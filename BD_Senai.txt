@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS Senai;
+
+CREATE TABLE IF NOT EXISTS Turmas(
+        Cod_turma 	Int Primary Key auto_increment,
+        Nome_turma 	varchar(20) 
+    	);
+
+CREATE TABLE IF NOT EXISTS Alunos(
+        Cod_aluno 	Int Primary Key auto_increment,
+        Nome_aluno 	Varchar(60),
+        Cod_turma 	Int,
+        Foreign key (Cod_turma) references Turmas (Cod_turma)
+        ON update cascade ON delete cascade
+    	);
+
+CREATE TABLE IF NOT EXISTS Professores(
+	Cod_Professor 	Int Primary Key auto_increment,
+	Nome_Prof 	Varchar(60)
+	);
+
+CREATE TABLE IF NOT EXISTS Disciplinas(
+	Cod_Disci 	Int Primary Key auto_increment,
+	Nome_Disci 	Varchar(60)
+	);
+
+CREATE TABLE IF NOT EXISTS Aulas(
+	Cod_aula 	Int Primary Key auto_increment,
+	Cod_turma 	Int,
+	Cod_Disci 	Int,
+	Cod_Professor 	Int,
+	Foreign key (Cod_turma) references Turmas (Cod_turma)
+        ON update cascade ON delete cascade,
+	Foreign key (Cod_Disci) references Disciplinas (Cod_Disci)
+        ON update cascade ON delete cascade,
+	Foreign key (Cod_Professor) references Professores (Cod_Professor)
+        ON update cascade ON delete cascade
+	);

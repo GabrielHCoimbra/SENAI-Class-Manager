@@ -31,6 +31,35 @@
 
     $resultado3 = $link->query($verify3);
 
+    $verify4 = "CREATE TABLE IF NOT EXISTS Professores(
+        Cod_Professor 	Int Primary Key auto_increment,
+        Nome_Prof 	Varchar(60)
+    )";
+
+    $resultado4 = $link->query($verify4);
+
+    $verify5 = "CREATE TABLE IF NOT EXISTS Disciplinas(
+        Cod_Disci 	Int Primary Key auto_increment,
+        Nome_Disci 	Varchar(60)
+    )";
+
+    $resultado5 = $link->query($verify5);
+
+    $verify6 = "CREATE TABLE IF NOT EXISTS Aulas(
+        Cod_aula 	Int Primary Key auto_increment,
+        Cod_turma 	Int,
+        Cod_Disci 	Int,
+        Cod_Professor 	Int,
+        Foreign key (Cod_turma) references Turmas (Cod_turma)
+            ON update cascade ON delete cascade,
+        Foreign key (Cod_Disci) references Disciplinas (Cod_Disci)
+            ON update cascade ON delete cascade,
+        Foreign key (Cod_Professor) references Professores (Cod_Professor)
+            ON update cascade ON delete cascade
+    )";
+
+    $resultado6 = $link->query($verify6);
+
     $query = "SELECT * FROM Turmas";
     $qry = $link->query($query) or die ($link->error);
 
@@ -70,14 +99,35 @@
 
         <div class="rest">
             <h1 class="title">OLÁ SEJA BEM VINDO AOS REGISTROS DA TURMA <?php echo "$class"; ?></h1>
-        
-            <a href="html/register.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Aluno</a>
-            <a href="student_query.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Consultar Aluno</a>
-            <a href="student1.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Sortear Aluno</a>
-            <a href="student2.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Sortear Grupos</a>
-            <a href="html/number_sort.html" target="resultado" class="hiperlinks">Sortear Numero</a>
-            <a href="html/timer.html?class=<?=$class;?>" target="resultado" class="hiperlinks">Temporizador</a>
-            <a href="html/credit.php?class=<?=$class;?>" class="hiperlinks">Créditos</a>
+            <nav class="nav1">
+                <ul class="ul1">
+                    <li class="li1"> Professores
+                        <ul class="ul2">
+                            <li><a href="html/register2.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Professor</a></li>
+                            <li><a href="html/register3.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Turma</a></li>
+                            <li><a href="" target="resultado" class="hiperlinks">Cadastrar Matérias</a></li>
+                            <li><a href="" target="resultado" class="hiperlinks">Cadastrar Aula</a></li>
+                        </ul>
+                    </li>
+                    <li class="li1"> Alunos
+                        <ul class="ul2">
+                            <li><a href="html/register.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Aluno</a></li>
+                            <li><a href="student_query.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Consultar Aluno</a></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </li>
+                    <li class="li1"> Ferramentas
+                        <ul class="ul2">
+                            <li><a href="student1.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Sortear Aluno</a></li>
+                            <li><a href="student2.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Sortear Grupos</a></li>
+                            <li><a href="html/number_sort.html" target="resultado" class="hiperlinks">Sortear Numero</a></li>
+                            <li><a href="html/timer.html?class=<?=$class;?>" target="resultado" class="hiperlinks">Temporizador</a></li>
+                        </ul>
+                    </li>
+                    <li class="li1"> <a href="html/credit.php?class=<?=$class;?>" class="hiperlinks">Créditos</a></li>
+                </ul>
+            </nav> 
         </div>
         
     </header>
@@ -86,7 +136,9 @@
         <iframe name="resultado" scrolling="auto" width="100%" height="100%" frameborder="0" src=""></iframe>
         </div>
     </main>
-    <footer></footer>
+    <footer class="footer">
+        <a href="https://br.linkedin.com/in/gabriel-henrique-coimbra-viana-413036241" class="footer_a">Desenvolvido por: <b>Gabriel Henrique Coimbra Viana</b></a>
+    </footer>
 </body>
 </html>
 

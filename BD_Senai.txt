@@ -14,8 +14,9 @@ CREATE TABLE IF NOT EXISTS Alunos(
     	);
 
 CREATE TABLE IF NOT EXISTS Professores(
-	Cod_Professor 	Int Primary Key auto_increment,
-	Nome_Prof 	Varchar(60)
+    Cod_Professor 	Int Primary Key auto_increment,
+    Nome_Prof 	Varchar(60),
+    Foto_Prof   varchar(220) DEFAULT 'img_prof/DEFAULT/Default.jpg'
 	);
 
 CREATE TABLE IF NOT EXISTS Disciplinas(
@@ -35,3 +36,10 @@ CREATE TABLE IF NOT EXISTS Aulas(
 	Foreign key (Cod_Professor) references Professores (Cod_Professor)
         ON update cascade ON delete cascade
 	);
+
+INSERT INTO Turmas VALUES ('DEFAULT','TESTE1', '1teste'), ('DEFAULT','TESTE2', '2teste'), ('DEFAULT','TESTE3', '3teste');
+INSERT INTO Professores VALUES ('DEFAULT','Plinio',DEFAULT), ('DEFAULT','Will',DEFAULT), ('DEFAULT','Edson',DEFAULT);
+INSERT INTO Disciplinas VALUES ('DEFAULT','Matematica'), ('DEFAULT','Calculol'), ('DEFAULT','BD');
+INSERT INTO Aulas VALUES ('DEFAULT','1', '1', '1'), ('DEFAULT','2', '2', '2'), ('DEFAULT','3','3','3');
+
+SELECT * FROM Professores INNER JOIN Aulas ON Professores.Cod_professor = Aulas.Cod_professor WHERE Professores.Cod_professor = Aulas.Cod_professor;

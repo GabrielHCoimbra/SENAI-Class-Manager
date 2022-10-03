@@ -1,6 +1,7 @@
 <?php
     $class = $_POST['name'];
-    
+
+
 
     $link = mysqli_connect("localhost", "root", "")
     or die("Nao foi possivel conectar ao servidor!");
@@ -16,7 +17,8 @@
 
     $verify2 = " CREATE TABLE IF NOT EXISTS Turmas(
         Cod_turma Int Primary Key auto_increment,
-        Nome_turma varchar(20) 
+        Nome_turma varchar(20),
+        Apelido varchar(10)
     )";
 
     $resultado2 = $link->query($verify2);
@@ -54,31 +56,35 @@
             ON update cascade ON delete cascade,
         Foreign key (Cod_Disci) references Disciplinas (Cod_Disci)
             ON update cascade ON delete cascade,
-        Foreign key (Cod_Professor) references Professores (Cod_Professor)
+        Foreign key (Cod_Professor) references Professores (Cod_Prof)
             ON update cascade ON delete cascade
     )";
 
     $resultado6 = $link->query($verify6);
 
-    $query = "SELECT * FROM Turmas";
-    $qry = $link->query($query) or die ($link->error);
+    if ($class!='ADM') {
+        $query = "SELECT * FROM Turmas";
+        $qry = $link->query($query) or die ($link->error);
 
-    $verif = false;
+        $verif = false;
 
-    while ($data = $qry->fetch_array()){
-        if ($data['Nome_turma'] == $class) {
-            $verif = true;
+        while ($data = $qry->fetch_array()){
+            if ($data['Nome_turma'] == $class) {
+                $verif = true;
+            }
+        }
+        if($verif == false){
+            $insere = "INSERT INTO Turmas VALUES(DEFAULT,'$class')";
+
+            $resultado = $link->query($insere)
+            or die("<table height = '' align = 'center'>
+            <tr><td valign = 'middle' align = 'center'>
+            <font size = '5'>Nao foi possivel cadastrar a turma!</font>
+            </td></tr></table>");
         }
     }
-    if($verif == false){
-        $insere = "INSERT INTO Turmas VALUES(DEFAULT,'$class')";
 
-        $resultado = $link->query($insere)
-        or die("<table height = '' align = 'center'>
-        <tr><td valign = 'middle' align = 'center'>
-        <font size = '5'>Nao foi possivel cadastrar a turma!</font>
-        </td></tr></table>");
-    }
+    
     
 ?>
 
@@ -104,11 +110,16 @@
                     <li class="li1"> Professores
                         <ul class="ul2">
                             <li><a href="html/register2.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Professor</a></li>
+                            <li><a href="teacher_query.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Consultar Professor</a></li>
                             <li><a href="html/register3.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Turma</a></li>
-                            <li><a href="" target="resultado" class="hiperlinks">Cadastrar Matérias</a></li>
-                            <li><a href="" target="resultado" class="hiperlinks">Cadastrar Aula</a></li>
+                            <li><a href="team_query.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Consultar Turma</a></li>
+                            <li><a href="html/register4.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Matérias</a></li>
+                            <li><a href="subject_query.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Consultar Matérias</a></li>
+                            <li><a href="html/register5.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Aula</a></li>
+                            <li><a href="class_query.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Consultar Aula</a></li>
                         </ul>
                     </li>
+                    <?php if($class!='ADM'){ ?>
                     <li class="li1"> Alunos
                         <ul class="ul2">
                             <li><a href="html/register.php?class=<?=$class;?>" target="resultado" class="hiperlinks">Cadastrar Aluno</a></li>
@@ -125,6 +136,7 @@
                             <li><a href="html/timer.html?class=<?=$class;?>" target="resultado" class="hiperlinks">Temporizador</a></li>
                         </ul>
                     </li>
+                    <?php } ?>
                     <li class="li1"> <a href="html/credit.php?class=<?=$class;?>" class="hiperlinks">Créditos</a></li>
                 </ul>
             </nav> 

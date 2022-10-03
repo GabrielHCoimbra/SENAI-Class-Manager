@@ -26,7 +26,7 @@ while ($data = $qry->fetch_array()) {
     }
 }
 
-$query = "SELECT * FROM Alunos";
+$query = "SELECT * FROM Turmas";
 $qry = $mysqli->query($query) or die ($mysqli->error);
 
 $i = 1;
@@ -37,15 +37,17 @@ $i = 1;
         <tr class="tr1">
             <td class="title">ID</td>
             <td class="title">NOME</td>
+            <td class="title">Apelido</td>
         </tr>
         <?php while ($data = $qry->fetch_array()) { 
-               if ($data['Cod_turma'] == $cod_turma) { 
+               
             ?>
             <tr class="tr">
-                <td class="tabi"><?php echo $data['Cod_aluno'];?></td>
-                <td class="tab"><?php echo $data['Nome_aluno'];?></td>
+                <td class="tabi"><?php echo $data['Cod_turma'];?></td>
+                <td class="tab"><?php echo $data['Nome_turma'];?></td>
+                <td class="tab"><?php echo $data['Apelido'];?></td>
             </tr>
-        <?php $i++;}} ?>
+        <?php $i++;} ?>
     </table>
 </div>
 </body>

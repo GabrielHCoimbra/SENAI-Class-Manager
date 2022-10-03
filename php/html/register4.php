@@ -12,29 +12,17 @@
     <?php
         $class = $_GET['class'];
     ?>
-    <form action="../class_register.php?class=<?=$class;?>" method="post" class="form_register">
+    <form action="../subject_register.php?class=<?=$class;?>" method="post" class="form_register">
         <table align = "center">
         <tr>
         <td colspan="2">
-        <h3>Código da Turma</h3>
+        <h3>Nome da disciplina</h3>
         </td>
         </tr>
         <tr>
         <td colspan="2">
             <div class="input-group">
                 <input required="" type="text" name="nome" autocomplete="off" class="input" placeholder="Nome"> 
-            </div>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2">
-        <h3>Apelido da Turma</h3>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2">
-            <div class="input-group">
-                <input required="" type="text" name="ap" autocomplete="off" class="input" placeholder="Nome"> 
             </div>
         </td>
         </tr>
